@@ -21,6 +21,7 @@ jobs:
         apt install -y google-chrome-stable
     - name: Build
       run: |
+        gem install bundler:2.2.20
         bundle -j 4
         bin/rails yarn:install db:setup assets:precompile
     - name: Run test
